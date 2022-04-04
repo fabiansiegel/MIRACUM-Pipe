@@ -974,7 +974,7 @@ cnv_annotation <- function(cnv_pvalue_txt, dbfile,
 
 # Try annotation first with SQL server if this fails try with biomaRt
 
-  ensembl=useMart("ensembl", dataset="hsapiens_gene_ensembl")
+  ensembl=useMart("ensembl", ssl.verifypeer = FALSE, dataset="hsapiens_gene_ensembl")
   
   for(i in 1:nrow(x)) {
     cat("Processing CNV#", i, "\n")
